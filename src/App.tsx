@@ -1,11 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
-import Children from '@/components/children';
+import Children from '@/components/ChildrenScrollList';
+import logo from './logo.svg';
 
 function App() {
+  console.log();
+  const nameAry = [];
+  for (let i = 0; i < 100; i++) {
+    nameAry.push(i);
+  }
   return (
     <div className="App">
-      <Children yuye="哈哈哈哈"></Children>
+      <Children yuye={nameAry}></Children>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
