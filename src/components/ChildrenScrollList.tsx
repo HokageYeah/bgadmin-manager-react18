@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import classNames from 'classnames';
 
 interface propsType {
-  yuye: any[];
+  yuye: number[];
 }
 const StyledDiv = styled.div`
   /* 样式属性 */
