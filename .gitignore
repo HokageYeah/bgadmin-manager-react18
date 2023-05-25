@@ -5,6 +5,14 @@
 /.pnp
 .pnp.js
 
+dist
+dist-ssr
+/dist
+dist.zip
+*.local
+package-lock.json
+pnpm-lock.yaml
+
 # testing
 /coverage
 
