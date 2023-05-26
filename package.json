@@ -21,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "push": "cd bin && sh push.sh $npm_config_name && cd .."
+    "push": "cd bin && sh push.sh $npm_config_message && cd .."
   },
   "eslintConfig": {
     "extends": [
