@@ -31,7 +31,7 @@ const Children = memo((props: propsType) => {
   const startRef = useRef(start);
   startRef.current = start;
   const [visibleCount, setVisibleCount] = useState(0);
-  // 使用泛型指定类型为 string[]
+  // 使用泛型指定类型为  string[]
   const [visiblData, setVisibleData] = useState<number[]>([]);
   const onHandleScroll = () => {
     const scrolltop = (virtualRef.current as unknown as HTMLDivElement).scrollTop;
