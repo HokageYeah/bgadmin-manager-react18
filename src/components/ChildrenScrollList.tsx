@@ -19,7 +19,7 @@ const StyledDiv = styled.div`
     box-sizing: border-box;
     height: 30px;
     margin: 10px 10px 0px 10px;
-    border: 1px solid red;
+    border: 5px solid red;
   }
 `;
 const Children = memo((props: propsType) => {
@@ -28,6 +28,8 @@ const Children = memo((props: propsType) => {
   const virtualContentRef = useRef(null);
   const [isShowItem] = useState(true);
   const [start, setStart] = useState(0);
+  const startRef = useRef(start);
+  startRef.current = start;
   const [visibleCount, setVisibleCount] = useState(0);
   // 使用泛型指定类型为 string[]
   const [visiblData, setVisibleData] = useState<number[]>([]);
@@ -37,9 +39,11 @@ const Children = memo((props: propsType) => {
     (
       virtualContentRef.current as unknown as HTMLDivElement
     ).style.webkitTransform = `translate3d(0, ${fixedScrollTop}px, 0)`;
-    setStart(Math.floor(scrolltop / 40));
-    setVisibleData(yuye.slice(start, start + visibleCount));
-    console.log(scrolltop, fixedScrollTop);
+    const countStart = Math.floor(scrolltop / 40);
+    setStart(countStart);
+    setVisibleData(yuye.slice(countStart, countStart + visibleCount));
+    console.log(yuye.slice(countStart, countStart + visibleCount));
+    console.log(scrolltop, fixedScrollTop, countStart, start, startRef.current);
   };
   // []空数组表示谁的影响都不受，只会首次执行一次
   useEffect(() => {
@@ -50,7 +54,7 @@ const Children = memo((props: propsType) => {
     // 获取首次加载屏幕内元素
     setVisibleCount(count);
     setVisibleData(yuye.slice(start, start + count));
-    console.log(height, count, visibleCount);
+    console.log(height, count, yuye.slice(start, start + count));
   }, []);
   const clickBtn = () => {
     console.log('点击可大量的卡上了');
