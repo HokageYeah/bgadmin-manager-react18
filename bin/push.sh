@@ -1,11 +1,11 @@
-main_branch=master
+main_branch=dev
 # 发布脚本名称，省略sh 比如当前脚本 push.sh
 source=push
 
 message_params=$1
 
 # 默认上传消息
-git_message="update master"
+git_message="update dev"
 
 # 错误日志输出目录
 path="$(pwd)/log"
