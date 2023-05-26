@@ -1,8 +1,7 @@
 import './App.css';
-import Children from '@/components/ChildrenScrollList';
-import logo from './logo.svg';
-import ChildrenIntersectionObserver from './components/ChildrenIntersectionObserver';
-
+import { useRoutes } from 'react-router-dom';
+import routes from './router';
+import { Suspense } from 'react';
 function App() {
   console.log();
   const nameAry = [];
@@ -11,17 +10,11 @@ function App() {
   }
   return (
     <div className="App">
-      <Children yuye={nameAry}></Children>
-      <ChildrenIntersectionObserver yuye={nameAry} height={195}></ChildrenIntersectionObserver>
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a className="App-link" href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
+      <div className="header">header</div>
+      <div className="page">
+        <Suspense fallback={'加载中'}>{useRoutes(routes)}</Suspense>
+      </div>
+      <div className="footer">footer</div>
     </div>
   );
 }

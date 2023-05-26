@@ -1,9 +1,6 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { memo, useEffect, useRef, useState } from 'react';
 import styled from 'styled-components';
-import classNames from 'classnames';
-interface styleProps {
-  position: string;
-}
 // 渲染十万条数据解决方案
 // https://juejin.cn/post/7065218958663614500
 // 字节跳动面试官：请100行代码实现无限滚动:
@@ -25,6 +22,7 @@ const StyleUl = styled.ul`
     border-radius: 10px;
     position: absolute;
     top: 30px;
+    left: 10%;
     width: 80%;
   }
 `;
@@ -77,7 +75,7 @@ const ChildrenIntersectionObserver = memo((props: propsType) => {
   };
   const callback = (entries: any[], observer: unknown) => {
     console.log(entries, observer);
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       /**
        * target: 被观察的目标元素，是一个 DOM 节点对象
          isIntersecting: 是否进入可视区域

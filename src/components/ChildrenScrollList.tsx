@@ -65,7 +65,7 @@ const Children = memo((props: propsType) => {
       <div ref={virtualContentRef}>
         {visiblData.map((item) => (
           <div className={classNames({ 'virtual-list-item': isShowItem })} key={item}>
-            ---{item}
+            ---{item}---
           </div>
         ))}
       </div>

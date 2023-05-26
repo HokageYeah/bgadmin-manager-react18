@@ -19,6 +19,11 @@
     "paths": {
       "@/*": ["src/*"],
       "/#/*": ["types/*"],
+      "components/*":["src/components/*"],
+      "hooks/*":["src/hooks/*"],
+      "router/*":["src/router/*"],
+      "store/*":["src/store/*"],
+
     }
   },
   "include": ["src"]

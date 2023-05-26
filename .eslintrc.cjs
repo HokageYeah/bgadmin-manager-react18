@@ -30,6 +30,8 @@ module.exports = {
     'react/react-in-jsx-scope': ['off'],
     // 关闭typescript对commonjs的验证
     '@typescript-eslint/no-var-requires': 'off',
+    // 关闭any的警告
+    '@typescript-eslint/no-explicit-any': 'off',
     // 除需要转义的情况外，字符串统一使用单引号 'jsx-quotes': [2, 'prefer-single'],
     quotes: [
       2,
