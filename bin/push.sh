@@ -40,7 +40,7 @@ exec_project(){
     git add -A  2>>$log
     git commit -m "$git_message"
     git push origin "$main_branch"
-    echo "主分支推送成功！🎉🎉🎉"
+    echo "$main_branch 分支推送成功！🎉🎉🎉"
 }
 
 message_check
