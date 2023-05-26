@@ -1,11 +1,11 @@
-main_branch=master
-# 发布脚本名称，省略sh 比如当前脚本 push.sh
+main_branch=dev
+# 发布脚本名称，省略sh 比如当前脚本 push.sh 
 source=push
 
 message_params=$1
 
 # 默认上传消息
-git_message="update master"
+git_message="update dev"
 
 # 错误日志输出目录
 path="$(pwd)/log"
@@ -40,7 +40,7 @@ exec_project(){
     git add -A  2>>$log
     git commit -m "$git_message"
     git push origin "$main_branch"
-    echo "主分支推送成功！🎉🎉🎉"
+    echo "$main_branch 分支推送成功！🎉🎉🎉"
 }
 
 message_check
