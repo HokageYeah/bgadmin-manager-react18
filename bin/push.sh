@@ -1,5 +1,5 @@
 main_branch=dev
-# 发布脚本名称，省略sh 比如当前脚本 push.sh
+# 发布脚本名称，省略sh 比如当前脚本 push.sh 
 source=push
 
 message_params=$1
