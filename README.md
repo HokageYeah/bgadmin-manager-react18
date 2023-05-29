@@ -61,7 +61,7 @@ indent_style = tab
 /public/*
 # 然后配置一个.prettierignore文件，
 # 因为上面的命令是让所有的代码都执行prettier的格式化，
-# 但是对于nodemodules一些文件不需要格式化，所以要配置忽略文件
+# 但是对于nodemodules一些文件不需要格式化，所以要配置忽略文件 
 ```
 
 ④、vscode 配置：
