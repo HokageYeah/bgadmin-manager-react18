@@ -23,7 +23,8 @@
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "push": "cd bin && sh push.sh $npm_config_message && cd .."
+    "push": "cd bin && sh push.sh $npm_config_message && cd ..",
+    "prettier": "prettier --write ."
   },
   "eslintConfig": {
     "extends": [
