@@ -1,3 +1,4 @@
+// 设置less
 const CracoLessPlugin = require('craco-less');
 const { resolve } = require('path');
 
@@ -7,6 +8,7 @@ module.exports = {
   // plugins
   plugins: [
     {
+      // 配置less插件
       plugin: CracoLessPlugin
     }
   ],

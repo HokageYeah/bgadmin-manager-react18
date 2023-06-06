@@ -5,6 +5,7 @@ import { HashRouter } from 'react-router-dom';
 
 import './index.css';
 import '@/assets/css/index.less';
+// 重置css样式文件
 import 'normalize.css';
 
 import App from './App';
