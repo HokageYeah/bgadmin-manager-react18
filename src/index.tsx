@@ -7,16 +7,19 @@ import './index.css';
 import '@/assets/css/index.less';
 // 重置css样式文件
 import 'normalize.css';
-
 import App from './App';
+import { Provider } from 'react-redux';
+import store from './store';
 // import reportWebVitals from './reportWebVitals';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
   <React.StrictMode>
-    <HashRouter>
-      <App />
-    </HashRouter>
+    <Provider store={store}>
+      <HashRouter>
+        <App />
+      </HashRouter>
+    </Provider>
   </React.StrictMode>
 );
 
