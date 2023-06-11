@@ -1,14 +1,20 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+
+interface IState {
+  count: number;
+  name: string;
+}
+const initialState: IState = {
+  count: 100,
+  name: '哈哈哈'
+};
 
 const conterSlice = createSlice({
   name: 'counter',
-  initialState: {
-    count: 100,
-    name: '哈哈哈'
-  },
+  initialState,
   reducers: {
-    changeNameAction(state, { payload }) {
-      state.name = payload;
+    changeNameAction(state, action: PayloadAction<string>) {
+      state.name = action.payload;
     }
   }
 });
