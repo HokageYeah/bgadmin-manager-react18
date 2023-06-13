@@ -9,7 +9,7 @@ const them = {
     wrapv1: `
         width: 1100px;
         margin: 0 auto;
-        background: yellow;
+        background: red;
     `
   }
 };
