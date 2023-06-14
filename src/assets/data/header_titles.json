@@ -25,11 +25,6 @@
     "link": "https://music.163.com/st/musician"
   },
   {
-    "title": "下载客户端",
-    "type": "path",
-    "link": "/download"
-  },
-  {
     "title": "渲染十万数据",
     "type": "path",
     "link": "/scrollView"

@@ -5,29 +5,33 @@ export const HeaderWrapper = styled.div`
   background-color: #242424;
   font-size: 14px;
   color: #fff;
-  .content {
+  > .content {
     height: 75px;
     display: flex;
     justify-content: space-between;
     /* 全局主题 + 混入 */
     ${(props) => props.theme.mixin.wrapv1}
   }
+  > .divider {
+    height: 5px;
+    background-color: #c20c0c;
+  }
 `;
 
 export const HeaderLeft = styled.div`
   display: flex;
-  .logo {
+  > .logo {
     display: block;
     width: 176px;
     height: 75px;
     background-position: 0 0;
     text-indent: -99999px; //像左缩进99999
   }
-  .title-list {
+  > .title-list {
     display: flex;
     line-height: 75px;
 
-    .item {
+    > .item {
       position: relative;
 
       a {
@@ -70,4 +74,39 @@ export const HeaderLeft = styled.div`
     }
   }
 `;
-export const HeaderRight = styled.div``;
+export const HeaderRight = styled.div`
+  background: green;
+  display: flex;
+  align-items: center;
+  color: #787878;
+  font-size: 12px;
+  /* 使用子选择器可以提高解析css的性能 
+    因为css选择符是从右往左匹配查找，如果使用后代选择器，则浏览器进行解析的时候，会上层的每个标签都进行遍历。
+    后代选择器是开销最高的。尽量降低选择器的深度，不超过三层。
+  */
+  > .search {
+    width: 158px;
+    height: 32px;
+    border-radius: 16px;
+    input {
+      &::placeholder {
+        font-size: 12px;
+      }
+    }
+  }
+  .center {
+    width: 90px;
+    height: 32px;
+    line-height: 32px;
+    margin: 0 16px;
+    text-align: center;
+    border: 1px solid #666;
+    border-radius: 16px;
+    color: #ccc;
+    cursor: pointer;
+    :hover {
+      color: #fff;
+      border-color: #fff;
+    }
+  }
+`;

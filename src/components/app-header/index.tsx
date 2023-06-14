@@ -1,8 +1,10 @@
 import React, { memo } from 'react';
 import type { FC, ReactNode } from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { HeaderLeft, HeaderRight, HeaderWrapper } from './style';
 import headerTitles from '@/assets/data/header_titles.json';
+import { Input } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 
 interface IProps {
   children?: ReactNode;
@@ -11,7 +13,18 @@ const AppHeader: FC<IProps> = () => {
   // 组件展示逻辑
   function showItem(item: any) {
     if (item.type === 'path') {
-      return <NavLink to={item.link}>{item.title}</NavLink>;
+      // NavLink 默认是有active的状态的
+      return (
+        <NavLink
+          to={item.link}
+          className={({ isActive }) => {
+            return isActive ? 'active' : undefined;
+          }}
+        >
+          {item.title}
+          <i className="icon sprite_01"></i>
+        </NavLink>
+      );
     } else {
       return (
         <a href={item.link} target="_blank" rel="noreferrer">
@@ -42,8 +55,17 @@ const AppHeader: FC<IProps> = () => {
           <Link to={'/focus'}>关注</Link>
           <Link to={'/download'}>下载客户端</Link> */}
         </HeaderLeft>
-        <HeaderRight>{/* <Link to={'/scrollView'}>渲染十万数据</Link> */}</HeaderRight>
+        <HeaderRight>
+          <Input
+            className="search"
+            placeholder="音乐/视频/电台/用户"
+            prefix={<SearchOutlined />}
+          ></Input>
+          <span className="center">创作者中心</span>
+          <span className="login">登录</span>
+        </HeaderRight>
       </div>
+      <div className="divider"></div>
     </HeaderWrapper>
   );
 };

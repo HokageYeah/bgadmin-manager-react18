@@ -9,7 +9,14 @@ module.exports = {
   plugins: [
     {
       // 配置less插件
-      plugin: CracoLessPlugin
+      plugin: CracoLessPlugin,
+      options: {
+        lessLoaderOptions: {
+          lessOptions: {
+            javascriptEnabled: true
+          }
+        }
+      }
     }
   ],
   // webpack
