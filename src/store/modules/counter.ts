@@ -10,7 +10,7 @@ const initialState: IState = {
 };
 
 const conterSlice = createSlice({
-  name: 'counter',
+  name: 'counteryy',
   initialState,
   reducers: {
     changeNameAction(state, action: PayloadAction<string>) {
