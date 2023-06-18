@@ -19,8 +19,8 @@ function App() {
   // 测试提交
   const { count, message } = useAppSelector(
     (state) => ({
-      count: state.counter.count,
-      message: state.counter.name
+      count: state.yycounter.count,
+      message: state.yycounter.name
     }),
     appShallowEqual
   );

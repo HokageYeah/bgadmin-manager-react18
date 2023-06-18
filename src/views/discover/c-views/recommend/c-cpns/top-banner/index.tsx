@@ -1,8 +1,7 @@
 import React, { memo, useRef, useState } from 'react';
 import type { ReactNode, FC, ElementRef } from 'react';
-import { shallowEqual } from 'react-redux';
 
-import { useAppSelector } from '@/store';
+import { appShallowEqual, useAppSelector } from '@/store';
 import { BannerControl, BannerLeft, BannerRight, BannerWrapper } from './style';
 import { Carousel } from 'antd';
 import classNames from 'classnames';
@@ -21,7 +20,7 @@ const TopBanner: FC<IProps> = () => {
     (state) => ({
       bannedrs: state.recommend.banners
     }),
-    shallowEqual //浅层比较，如果一样就调用render了
+    appShallowEqual //浅层比较，如果一样就调用render了
   );
 
   /** 事件处理函数 */
