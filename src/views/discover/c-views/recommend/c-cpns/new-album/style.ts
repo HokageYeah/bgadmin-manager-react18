@@ -37,6 +37,11 @@ export const AlbumWrapper = styled.div`
       background: orange;
       overflow: hidden;
       flex: 1;
+      .album-list {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
   }
 `;

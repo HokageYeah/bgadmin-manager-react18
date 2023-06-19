@@ -4,6 +4,7 @@ import { AlbumWrapper } from './style';
 import AreaHeaderV1 from '@/components/area-header-v1';
 import { Carousel } from 'antd';
 import { useAppSelector } from '@/store';
+import NewAlbumItem from '@/components/new-album-item';
 interface IProps {
   children?: ReactNode;
 }
@@ -33,13 +34,13 @@ const NewAlbum: FC<IProps> = () => {
           <Carousel ref={bannerRef} dots={false} speed={1500}>
             {[0, 1].map((item) => {
               return (
-                <h1 key={item}>
+                <div key={item}>
                   <div className="album-list">
                     {newAlbums.slice(item * 5, (item + 1) * 5).map((album) => {
-                      return <span key={album.id}>{album.name}</span>;
+                      return <NewAlbumItem key={album.id} itemData={album} />;
                     })}
                   </div>
-                </h1>
+                </div>
               );
             })}
           </Carousel>

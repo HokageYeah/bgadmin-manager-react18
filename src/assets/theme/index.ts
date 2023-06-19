@@ -10,6 +10,11 @@ const them = {
         width: 1100px;
         margin: 0 auto;
         background: red;
+    `,
+    textNowrap: `
+        white-space:nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
     `
   }
 };
