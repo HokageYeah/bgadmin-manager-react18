@@ -17,3 +17,12 @@ export function getNewAlbum() {
     url: '/album/newest'
   });
 }
+
+export function getPlaylistDetail(id: number) {
+  return hyRequest.get({
+    url: '/playlist/detail',
+    params: {
+      id
+    }
+  });
+}

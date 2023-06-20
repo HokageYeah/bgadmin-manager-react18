@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { getBanners, getHotRecommend, getNewAlbum } from '../service/recommend';
+import { getBanners, getHotRecommend, getNewAlbum, getPlaylistDetail } from '../service/recommend';
 
+const rankingIds = [19723756, 3779629, 2884035];
 // 网络请求
 export const fetchBannerDataAction = createAsyncThunk('banners', async (arg, { dispatch }) => {
   const res = await getBanners();
@@ -21,15 +22,29 @@ export const fetchNewAlbumAction = createAsyncThunk('newAlbumyy', async (arg, { 
   dispatch(changeNewAlbumsAction(res.albums));
 });
 
+export const fetchRankingDataAction = createAsyncThunk('rankingData', async (arg, { dispatch }) => {
+  const promise: Promise<any>[] = [];
+  for (const id of rankingIds) {
+    promise.push(getPlaylistDetail(id));
+  }
+  Promise.all(promise).then((res) => {
+    const playlists = res.filter((item) => item.playlist).map((item) => item.playlist);
+    console.log('飙升榜：', playlists);
+    dispatch(changeRankingsAction(playlists));
+  });
+});
+
 interface IRecommendState {
   banners: any[];
   hotRecommends: any[];
   newAlbums: any[];
+  rankings: any[];
 }
 const initialState: IRecommendState = {
   banners: [],
   hotRecommends: [],
-  newAlbums: []
+  newAlbums: [],
+  rankings: []
 };
 const recommendSlice = createSlice({
   name: 'recommend',
@@ -43,6 +58,9 @@ const recommendSlice = createSlice({
     },
     changeNewAlbumsAction(state, { payload }) {
       state.newAlbums = payload;
+    },
+    changeRankingsAction(state, { payload }) {
+      state.rankings = payload;
     }
   }
   //   方式一
@@ -61,6 +79,10 @@ const recommendSlice = createSlice({
   //   }
 });
 
-export const { changeBannersAction, changeHotRecommendsAction, changeNewAlbumsAction } =
-  recommendSlice.actions;
+export const {
+  changeBannersAction,
+  changeHotRecommendsAction,
+  changeNewAlbumsAction,
+  changeRankingsAction
+} = recommendSlice.actions;
 export default recommendSlice.reducer;
