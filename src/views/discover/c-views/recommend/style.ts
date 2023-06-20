@@ -14,6 +14,7 @@ export const RecommendWrapper = styled.div`
     > .right {
       margin-left: 1px;
       width: 250px;
+      background-color: darkcyan;
     }
   }
 `;
