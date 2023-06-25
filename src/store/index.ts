@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from './modules/counter';
 import recommendReducer from '@/views/discover/c-views/recommend/store/recommend';
+import playerReducer from '@/views/player/store/player';
 import { useSelector, TypedUseSelectorHook, useDispatch, shallowEqual } from 'react-redux';
 const store = configureStore({
   reducer: {
     yycounter: counterReducer,
-    recommend: recommendReducer
+    recommend: recommendReducer,
+    yyplayerReducer: playerReducer
   }
 });
 
