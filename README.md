@@ -44,8 +44,12 @@ indent_style = tab
 - tabWidth：tab 是空格的情况下，是几个空格，选择 2 个
 - printWidth： 当前行字符的长度，推荐 80，也有喜欢 100 或者 120
 - singleQuote：使用单引号还是双引号，选择 true，使用单引号
-- trailingComma：在多行输入的尾逗号是否添加，设置为 none，比如对象类型的最后一个属性后面是否添加一个,
+- trailingComma：在多行输入的尾逗号是否添加，设置为 none，比如对象类型的最后一个属性后面是否添加一个,号。'all' 表示所有情况都添加逗号。
 - semi：语句末尾是否要加分号，默认值 true，选择 false 表示不加。
+- vueIndentScriptAndStyle： 在 Vue 单文件组件中，控制是否对 <script> 和 <style> 标签进行缩进处理，设置为 true 表示缩进，设置为 false 表示不缩进。
+- proseWrap：控制是否换行，默认为 'preserve'，表示按照原样保留换行符；'never' 表示不换行；'always' 表示总是换行。
+- htmlWhitespaceSensitivity： 控制 HTML 中空白符的敏感度，'strict' 表示敏感，会根据构建实际情况处理空白符；'ignore' 表示不敏感，会将所有的空白符视为一样。
+- endOfLine：控制行尾换行符的风格，'auto' 表示自动检测并使用当前操作系统的换行符，'lf' 表示使用 LF 作为换行符，'crlf' 表示使用 CRLF 作为换行符。
 
 ③、创建.prettierignore 忽略文件
 
