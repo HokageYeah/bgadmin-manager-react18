@@ -50,6 +50,14 @@ indent_style = tab
 - proseWrap：控制是否换行，默认为 'preserve'，表示按照原样保留换行符；'never' 表示不换行；'always' 表示总是换行。
 - htmlWhitespaceSensitivity： 控制 HTML 中空白符的敏感度，'strict' 表示敏感，会根据构建实际情况处理空白符；'ignore' 表示不敏感，会将所有的空白符视为一样。
 - endOfLine：控制行尾换行符的风格，'auto' 表示自动检测并使用当前操作系统的换行符，'lf' 表示使用 LF 作为换行符，'crlf' 表示使用 CRLF 作为换行符。
+- wrap_attributes："auto" 自动格式化 HTML、JSX 属性的折行方式。
+- bracketSpacing：false 在对象字面量的花括号之间不添加空格。
+- jsxBracketSameLine: true 将 JSX 元素的闭合符号放在同一行。
+- overrides: [{ "files": ".prettierrc", "options": { "parser": "json" } }]: 定义针对 .prettierrc 文件的特定选项，使用 JSON 解析器对此文件进行解析。
+这些配置选项可以根据个人偏好和项目要求进行自定义。将该配置文件放置在项目根目录下，Prettier 就会按照这些规则格式化代码。
+- wrap_line_length: 120: 以 120 个字符为阈值自动折行。
+- arrowParens: "avoid": 在箭头函数参数只有一个时，不添加括号。
+
 
 ③、创建.prettierignore 忽略文件
 
